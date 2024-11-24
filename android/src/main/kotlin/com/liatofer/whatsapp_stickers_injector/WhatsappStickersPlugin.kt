@@ -38,7 +38,7 @@ public class WhatsappStickersPlugin: FlutterPlugin, MethodCallHandler, ActivityA
   private val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "whatsapp_stickers_plus")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "whatsapp_stickers_injector")
     channel.setMethodCallHandler(this)
     context = flutterPluginBinding.applicationContext
   }
@@ -60,7 +60,7 @@ public class WhatsappStickersPlugin: FlutterPlugin, MethodCallHandler, ActivityA
 
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "whatsapp_stickers_plus")
+      val channel = MethodChannel(registrar.messenger(), "whatsapp_stickers_injector")
       channel.setMethodCallHandler(WhatsappStickersPlugin())
     }
 

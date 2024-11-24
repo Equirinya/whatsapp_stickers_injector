@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'exceptions.dart';
 
 class WhatsappStickers {
-  static const MethodChannel _channel = MethodChannel('whatsapp_stickers_plus');
+  static const MethodChannel _channel = MethodChannel('whatsapp_stickers_injector');
 
   final Map<String, List<String>> _stickers = {};
 
