@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:whatsapp_stickers_plus/exceptions.dart';
-import 'package:whatsapp_stickers_plus/whatsapp_stickers.dart';
+import 'package:whatsapp_stickers_injector/exceptions.dart';
+import 'package:whatsapp_stickers_injector/whatsapp_stickers.dart';
 
 void main() {
   runApp(AppRoot());

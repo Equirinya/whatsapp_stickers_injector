@@ -1,7 +1,7 @@
-name: whatsapp_stickers_plus
-description: WhatsApp Stickers plugin for Flutter.
-version: 1.1.1
-homepage: https://github.com/anderscheow/whatsapp_stickers_plus
+name: whatsapp_stickers_injector
+description: A Flutter plugin for adding stickers to WhatsApp from any Flutter app.
+version: 1.0.0
+homepage: https://github.com/tomerof/whatsapp_stickers_injector
 
 environment:
   sdk: '>=2.16.0 <3.0.0'
@@ -21,7 +21,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: dev.applicazza.flutter.plugins.whatsapp_stickers_plus
+        package: com.liatofer.whatsapp_stickers_injector
         pluginClass: WhatsappStickersPlugin
       ios:
         pluginClass: WhatsappStickersPlugin

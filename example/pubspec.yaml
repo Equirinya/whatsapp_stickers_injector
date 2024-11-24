@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   dio: ^4.0.0
   path_provider: ^2.0.5
-  whatsapp_stickers_plus:
+  whatsapp_stickers_injector:
     # When depending on this package from a real application you should use:
     #   whatsapp_stickers_plus: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
