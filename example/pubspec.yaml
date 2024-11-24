@@ -20,6 +20,8 @@ dependencies:
     # The example app is bundled with the plugin so we use a path dependency on
     # the parent directory to use the current plugin's version. 
     path: ../
+  rename: ^3.0.2
+  change_app_package_name: ^1.4.0
 
 dev_dependencies:
   flutter_test:
