@@ -1,6 +1,10 @@
-# whatsapp_stickers_plus
+# whatsapp_stickers_injector
 
 A Flutter plugin for adding stickers to WhatsApp.
+
+forked from [applicazza/whatsapp_stickers_plus](https://pub.dev/packages/whatsapp_stickers_plus)
+
+just updated the android build files.
 
 ## Notes
 
