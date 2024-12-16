@@ -1,3 +1,8 @@
+## 1.1.2
+
+* update ios build files
+* update android build files
+
 ## 1.1.1
 
 * Overwrite `toString()` for exceptions
