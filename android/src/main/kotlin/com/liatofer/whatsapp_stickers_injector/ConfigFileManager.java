@@ -56,10 +56,9 @@ public class ConfigFileManager {
         String publisherWebsite = call.argument("publisherWebsite");
         String privacyPolicyWebsite = call.argument("privacyPolicyWebsite");
         String licenseAgreementWebsite = call.argument("licenseAgreementWebsite");
-        String imageDataVersion = call.argument("imageDataVersion");
         Map<String, List<String>> stickers = call.argument("stickers");
         StickerPack newStickerPack = new StickerPack(identifier, name, publisher, trayImageFileName, "",
-                publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, false);
+                publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, "1", false);
         List<Sticker> newStickers = new ArrayList<Sticker>();
         assert stickers != null;
         for (Map.Entry<String, List<String>> entry : stickers.entrySet()) {

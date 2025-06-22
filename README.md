@@ -31,6 +31,13 @@ android {
     }
 }
 ```
+also add the following to your AndroidManifest.xml inside the <manifest> block. Otherwise the plugin won't be able to discover Whatsapp.
+```
+<queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+    </queries>
+```
 
 ### iOS
 
