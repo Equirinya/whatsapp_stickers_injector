@@ -2,9 +2,10 @@
 
 A Flutter plugin for adding stickers to WhatsApp.
 
-forked from [applicazza/whatsapp_stickers_plus](https://pub.dev/packages/whatsapp_stickers_plus)
 
-just updated the android build files.
+forked from [tomerof/whatsapp_stickers_injector](https://pub.dev/packages/whatsapp_stickers_injector) ,which is forked from [applicazza/whatsapp_stickers_plus](https://pub.dev/packages/whatsapp_stickers_plus)
+
+fixed it to work with newer android versions and also be able to update an existing sticker pack.
 
 ## Notes
 
@@ -12,7 +13,12 @@ just updated the android build files.
 
 ## Usage
 
-To use this plugin, add `whatsapp_stickers_plus` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+To use this plugin, add `whatsapp_stickers_injector` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/):
+```
+whatsapp_stickers_injector:
+    git:
+      url: https://github.com/Equirinya/whatsapp_stickers_injector.git
+```
 
 ### Android
 
@@ -24,6 +30,13 @@ android {
         noCompress "webp"
     }
 }
+```
+also add the following to your AndroidManifest.xml inside the <manifest> block. Otherwise the plugin won't be able to discover Whatsapp.
+```
+<queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+    </queries>
 ```
 
 ### iOS
