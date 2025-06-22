@@ -19,6 +19,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 class ContentFileParser {
 
     private static final int LIMIT_EMOJI_COUNT = 3;

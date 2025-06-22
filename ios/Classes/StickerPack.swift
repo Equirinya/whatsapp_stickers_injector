@@ -32,6 +32,7 @@ class StickerPack {
     let name: String
     let publisher: String
     let trayImage: ImageData
+    let imageDataVersion: String? = "1"
     let publisherWebsite: String?
     let privacyPolicyWebsite: String?
     let licenseAgreementWebsite: String?

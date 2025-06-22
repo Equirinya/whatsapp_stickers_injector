@@ -46,7 +46,9 @@ public class SwiftWhatsappStickersPlugin: NSObject, FlutterPlugin {
             result(FlutterError(code: "INVALID_STICKERS", message: "Invalid stickers", details: nil))
             return
         }
-        
+
+
+        let imageDataVersion = arguments["imageDataVersion"] as? String
         let publisherWebsite = arguments["publisherWebsite"] as? String
         let privacyPolicyWebsite = arguments["privacyPolicyWebsite"] as? String
         let licenseAgreementWebsite = arguments["licenseAgreementWebsite"] as? String
@@ -58,6 +60,7 @@ public class SwiftWhatsappStickersPlugin: NSObject, FlutterPlugin {
                                           name: name,
                                           publisher: publisher,
                                           trayImageFileName: locateFile(atPath: trayImageFileName),
+                                          imageDataVersion: imageDataVersion,
                                           publisherWebsite: publisherWebsite,
                                           privacyPolicyWebsite: privacyPolicyWebsite,
                                           licenseAgreementWebsite: licenseAgreementWebsite)
