@@ -112,8 +112,6 @@ class ContentFileParser {
                     break;
                 case "image_data_version":
                     imageDataVersion = reader.nextString();
-                    //log the version to help with debugging:
-                    Log.e("ContentFileParser", "image_data_version: " + imageDataVersion);
                     break;
                 case "avoid_cache":
                     avoidCache = reader.nextBoolean();

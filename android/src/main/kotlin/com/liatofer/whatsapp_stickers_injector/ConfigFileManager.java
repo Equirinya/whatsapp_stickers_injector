@@ -81,8 +81,6 @@ public class ConfigFileManager {
             }
         }
         stickerPacks.add(stickerPack);
-        Log.e("ConfigFileManager", "Adding new pack: " + stickerPack.identifier);
-        Log.e("ConfigFileManager", "Stickerpacks: " + stickerPacks);
         return updateConfigFile(context, stickerPacks);
     }
 
