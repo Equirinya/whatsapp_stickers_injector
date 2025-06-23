@@ -90,6 +90,7 @@ public class WhatsappStickersPlugin: FlutterPlugin, MethodCallHandler, ActivityA
       "sendToWhatsApp" -> {
         try{
           val stickerPack: StickerPack = ConfigFileManager.fromMethodCall(context, call)
+          Log.e("sendToWhatsApp1", "image_data_version: ${stickerPack.imageDataVersion}")
           // update json file
           ConfigFileManager.addNewPack(context, stickerPack)
           context?.let { StickerPackValidator.verifyStickerPackValidity(it, stickerPack) };

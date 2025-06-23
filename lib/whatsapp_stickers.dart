@@ -10,6 +10,7 @@ class WhatsappStickers {
   final String name;
   final String publisher;
   final WhatsappStickerImage trayImageFileName;
+  String? imageDataVersion;
   String? publisherWebsite;
   String? privacyPolicyWebsite;
   String? licenseAgreementWebsite;
@@ -19,6 +20,7 @@ class WhatsappStickers {
     required this.name,
     required this.publisher,
     required this.trayImageFileName,
+    this.imageDataVersion = '1',
     this.publisherWebsite,
     this.privacyPolicyWebsite,
     this.licenseAgreementWebsite,
@@ -35,6 +37,7 @@ class WhatsappStickers {
       payload['name'] = name;
       payload['publisher'] = publisher;
       payload['trayImageFileName'] = trayImageFileName.path;
+      payload['imageDataVersion'] = imageDataVersion;
       payload['publisherWebsite'] = publisherWebsite;
       payload['privacyPolicyWebsite'] = privacyPolicyWebsite;
       payload['licenseAgreementWebsite'] = licenseAgreementWebsite;

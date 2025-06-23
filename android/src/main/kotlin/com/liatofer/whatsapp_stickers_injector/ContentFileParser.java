@@ -19,6 +19,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 class ContentFileParser {
 
     private static final int LIMIT_EMOJI_COUNT = 3;
@@ -110,6 +112,8 @@ class ContentFileParser {
                     break;
                 case "image_data_version":
                     imageDataVersion = reader.nextString();
+                    //log the version to help with debugging:
+                    Log.e("ContentFileParser", "image_data_version: " + imageDataVersion);
                     break;
                 case "avoid_cache":
                     avoidCache = reader.nextBoolean();
