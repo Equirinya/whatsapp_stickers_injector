@@ -57,6 +57,7 @@ class StickerPackManager {
                 let packPublisher: String = pack["publisher"] as! String
                 let packTrayImageFileName: String = pack["tray_image_file"] as! String
 
+                var imageDataVersion: String? = pack["image_data_version"] as? String
                 var packPublisherWebsite: String? = pack["publisher_website"] as? String
                 var packPrivacyPolicyWebsite: String? = pack["privacy_policy_website"] as? String
                 var packLicenseAgreementWebsite: String? = pack["license_agreement_website"] as? String
@@ -80,7 +81,7 @@ class StickerPackManager {
                 var stickerPack: StickerPack?
 
                 do {
-                   stickerPack = try StickerPack(identifier: packIdentifier!, name: packName, publisher: packPublisher, trayImageFileName: packTrayImageFileName, publisherWebsite: packPublisherWebsite, privacyPolicyWebsite: packPrivacyPolicyWebsite, licenseAgreementWebsite: packLicenseAgreementWebsite)
+                   stickerPack = try StickerPack(identifier: packIdentifier!, name: packName, publisher: packPublisher, trayImageFileName: packTrayImageFileName, imageDataVersion: imageDataVersion, publisherWebsite: packPublisherWebsite, privacyPolicyWebsite: packPrivacyPolicyWebsite, licenseAgreementWebsite: packLicenseAgreementWebsite)
                 } catch StickerPackError.fileNotFound {
                     fatalError("\(packTrayImageFileName) not found.")
                 } catch StickerPackError.emptyString {

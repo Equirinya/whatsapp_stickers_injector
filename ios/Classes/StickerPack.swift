@@ -32,7 +32,7 @@ class StickerPack {
     let name: String
     let publisher: String
     let trayImage: ImageData
-    let imageDataVersion: String? = "1"
+    let imageDataVersion: String?
     let publisherWebsite: String?
     let privacyPolicyWebsite: String?
     let licenseAgreementWebsite: String?
@@ -67,7 +67,7 @@ class StickerPack {
      - .incorrectImageSize if the tray image is not within the allowed size
      - .animatedImagesNotSupported if the tray image is animated
      */
-    init(identifier: String, name: String, publisher: String, trayImageFileName: String, publisherWebsite: String?, privacyPolicyWebsite: String?, licenseAgreementWebsite: String?) throws {
+    init(identifier: String, name: String, publisher: String, trayImageFileName: String, imageDataVersion: String?, publisherWebsite: String?, privacyPolicyWebsite: String?, licenseAgreementWebsite: String?) throws {
         guard !name.isEmpty && !publisher.isEmpty && !identifier.isEmpty else {
             throw StickerPackError.emptyString
         }
@@ -85,6 +85,7 @@ class StickerPack {
 
         stickers = []
 
+        self.imageDataVersion = imageDataVersion
         self.publisherWebsite = publisherWebsite
         self.privacyPolicyWebsite = privacyPolicyWebsite
         self.licenseAgreementWebsite = licenseAgreementWebsite
@@ -108,7 +109,7 @@ class StickerPack {
      - .incorrectImageSize if the tray image is not within the allowed size
      - .animatedImagesNotSupported if the tray image is animated
      */
-    init(identifier: String, name: String, publisher: String, trayImagePNGData: Data, publisherWebsite: String?, privacyPolicyWebsite: String?, licenseAgreementWebsite: String?) throws {
+    init(identifier: String, name: String, publisher: String, trayImagePNGData: Data, imageDataVersion: String?, publisherWebsite: String?, privacyPolicyWebsite: String?, licenseAgreementWebsite: String?) throws {
         guard !name.isEmpty && !publisher.isEmpty && !identifier.isEmpty else {
             throw StickerPackError.emptyString
         }
@@ -126,6 +127,7 @@ class StickerPack {
 
         stickers = []
 
+        self.imageDataVersion = imageDataVersion
         self.publisherWebsite = publisherWebsite
         self.privacyPolicyWebsite = privacyPolicyWebsite
         self.licenseAgreementWebsite = licenseAgreementWebsite
@@ -185,6 +187,7 @@ class StickerPack {
             json["identifier"] = self.identifier
             json["name"] = self.name
             json["publisher"] = self.publisher
+            json["image_data_version"] = self.imageDataVersion ?? "1"
             json["tray_image"] = self.trayImage.image!.pngData()?.base64EncodedString()
 
             var stickersArray: [[String: Any]] = []
